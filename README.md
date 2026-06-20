@@ -1,7 +1,7 @@
 🧢 Hood & Diamond
 📖 Descripción
 
-Hood & Diamond es un e-commerce desarrollado como proyecto final del curso de React.
+Hood & Diamond es un e-commerce desarrollado como proyecto final del curso de Backend 1.
 
 La aplicación permite:
 
