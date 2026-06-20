@@ -1,5 +1,7 @@
 export default function Counter({ stock, cantidad, setCantidad }) {
 
+  // Funciones para sumar y restar la cantidad, respetando el stock disponible
+
   const sumar = () => {
     if (cantidad < stock) {
       setCantidad(prev => prev + 1);

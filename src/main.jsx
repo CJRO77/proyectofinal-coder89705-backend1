@@ -4,11 +4,13 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from "react-router-dom";
 import App from './App.jsx'
 import './index.css'
-import Cart from './components/Cart.jsx';
 import { CartProvider } from './components/CartContext.jsx';
 
 
+
 createRoot(document.getElementById('root')).render(
+  
+  // Envolvemos toda la aplicación con CartProvider para que el contexto esté disponible en todos los componentes
 
   
     <BrowserRouter>

@@ -1,87 +1,167 @@
+/*estilos globales para toda la aplicación, especialmente el fondo y el color del texto */
+
+:root {
+  --bs-body-bg: #f3f4f6;
+}
+
+/* Esto fuerza el fondo en toda la pantalla */
+
+body, #root {
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  min-height: 100vh;
+  color: #333333; 
+}
+
+
+
+
+
+
+/*contenedor principal de las tarjetas, con un diseño de cuadrícula responsiva */
+
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 35px;
+  padding: 40px 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .card-item * {
   box-sizing: border-box;
 }
 
-.item-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 50px;
-    padding: 40px 20px;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+/*tarjeta individual, con un diseño limpio y moderno, bordes redondeados y una sombra sutil para dar profundidad */
+
 .card-item {
-    width: 100%;
-    background-color: #ffffff; 
-    border-radius: 16px;
-    border: 1px solid #eee;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    padding: 20px;
-    text-align: center;
-    transition: all 0.3s ease;
-    cursor: pointer;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    overflow: hidden;
+  width: 100%;
+  background-color: #ffffff; 
+  border-radius: 16px;
+  border: 1px solid #f0f0f0; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); 
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
 }
+
+/* Efecto hover para levantar la tarjeta y aumentar la sombra, dando una sensación de interactividad y profundidad */
 
 .card-item:hover {
-    transform: scale(1.08);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);    
-    
-    
+  transform: translateY(-8px); 
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);    
 }
+
+/* Imagen del producto */
 
 .card-image {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    transition: transform 0.4s ease;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.5s ease;
 }
 
+/* La imagen hace un micro-zoom al pasar el mouse por la tarjeta */
+
+.card-item:hover .card-image {
+  transform: scale(1.05);
+}
+
+/*texto del titulo*/
+
 .card-h2 {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    color: #111;
-    font-weight: 600;
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #333333;
+  font-weight: 600;
 }
 
 .card-price {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #000;
-    margin-bottom: 10px;
-
-
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 8px;
 }
 
 .card-stock {
-  font-size: 0.95rem;
-  font-weight: 700; 
-  color: #000;        
-  margin-bottom: 10px;
+  font-size: 0.9rem;
+  font-weight: 600; 
+  color: #666666;       
+  margin-bottom: 5px;
 }
+
+/* Contenedor para el badge de estado, centrado y con un margen adecuado */
+
+.status-badge-container {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center; 
+}
+
+.status-badge {
+  font-size: 0.75rem; 
+  font-weight: 700; 
+  letter-spacing: 1px; 
+  padding: 6px 14px; 
+  border-radius: 40px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.status-badge.disponible {
+  background-color: #e6f7ed; 
+  color: #1f8b4d;
+  border: 1px solid #b7ebb4; 
+}
+
+.status-badge.agotado {
+  background-color: #fce8e6; 
+  color: #cc3333; 
+  border: 1px solid #f5c2be; 
+}
+
+/* Botón de compra */
 
 .btn-ml {
   width: 100%;
   background-color: #3483fa; 
   color: white;
   border: none;
-  padding: 12px;
-  border-radius: 8px;
+  padding: 14px;
+  border-radius: 10px;
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin-top: auto; 
 }
 
-.btn-ml:hover {
+/* Hover solo si el botón NO está deshabilitado */
+
+.btn-ml:hover:not(:disabled) {
   background-color: #2968c8;
-  transform: scale(1.02);
+  transform: translateY(-2px); 
+}
+
+/* Efecto de clic real */
+
+.btn-ml:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Estilo para el botón deshabilitado  */
+
+.btn-ml:disabled {
+  background-color: #e0e0e0;
+  color: #a0a0a0;
+  cursor: not-allowed;
+  transform: none;
 }

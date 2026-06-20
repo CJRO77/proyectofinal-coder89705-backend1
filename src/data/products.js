@@ -81,7 +81,7 @@ const products = [
     title: "Gorra Charlotte Hornets",
     price: 49000,
     description: "Gorra confeccionada en 100% algodón de alta calidad con bordado en el frente. Cuenta con un diseño clásico de seis paneles y una visera curva para brindar sombra y protección contra el sol. La parte trasera tiene un cierre ajustable para un ajuste personalizado, lo que la hace cómoda para usar durante todo el día. Esta gorra es perfecta para los fanáticos que desean mostrar su apoyo al equipo con estilo.",
-    image: "/imgs/gorra-charlotte.jpg",
+    image: "/imgs/charlotte-hornets.jpg",
     category: "baloncesto",
     stock: 20
   },

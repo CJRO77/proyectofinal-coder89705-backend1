@@ -1,50 +1,65 @@
-import './App.css'
-import Footer from './components/Footer'
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Contacto from "./components/Contacto";
 import Navbar from "./components/Navbar";
-import { CartContext } from './components/CartContext';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
-import { Routes, Route } from "react-router-dom";
-import ItemListContainer from './components/ItemListContainer';
-import ItemDetail from './components/ItemDetail';
-import Contacto from './components/Contacto';
-import Cart from './components/Cart';
-
-
+import ItemListContainer from "./components/ItemListContainer";
+import ItemDetail from "./components/ItemDetail";
+import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
+import { CartProvider } from "./components/CartContext";
 
 function App() {
 
   return (
-
-    // contenedor principal con rutas para cada sección y componentes como Navbar y Footer
-    <>
+              // Envolvemos toda la aplicación con el CartProvider para que el contexto esté disponible en todos los componentes
     
-      <Navbar />
+   <CartProvider>
 
-      <Routes>
+    
 
-       <Route path="/" element={
-  <ItemListContainer />
-} />
+        <Navbar />
 
-<Route path="/productos/:categoria" element={
-  <ItemListContainer />
-} />
+        <Routes>
 
-        <Route path="/producto/:id" element={
-          <ItemDetail />
-        } />
+          <Route
+            path="/"
+            element={<ItemListContainer />}
+          />
 
-        <Route path="/contacto" element={<Contacto />} />
+          <Route
+            path="/productos/:categoria"
+            element={<ItemListContainer />}
+          />
 
-        <Route path="/cart" element={<Cart />} />
+          <Route
+            path="/producto/:id"
+            element={<ItemDetail />}
+          />
 
-      </Routes>
+          <Route
+            path="/cart"
+            element={<Cart />}
+          />
 
-      <Footer />
-    </>
+          <Route
+            path="/checkout"
+            element={<Checkout />}
+          />
+
+          <Route
+            path="/contacto"
+            element={<Contacto />}
+          />
+
+        </Routes>
+
+      
+
+    </CartProvider>
   );
 }
-
 
 export default App;
