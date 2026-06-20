@@ -1,11 +1,20 @@
 🧢 Hood & Diamond
-Descripción
+📖 Descripción
 
-Hood & Diamond es un e-commerce desarrollado como proyecto final del curso de React. La aplicación permite visualizar un catálogo de gorras deportivas, consultar el detalle de cada producto, administrar un carrito de compras y actualizar el stock utilizando una base de datos en MongoDB Atlas.
+Hood & Diamond es un e-commerce desarrollado como proyecto final del curso de React.
 
-El proyecto está desarrollado bajo una arquitectura Full Stack, utilizando React para el frontend y Node.js con Express para el backend.
+La aplicación permite:
 
-Tecnologías utilizadas
+Visualizar un catálogo de gorras deportivas.
+Filtrar productos por categoría.
+Consultar el detalle de cada producto.
+Administrar un carrito de compras.
+Actualizar el stock en tiempo real mediante MongoDB Atlas.
+Finalizar la compra mediante un proceso de Checkout.
+
+El proyecto fue desarrollado bajo una arquitectura Full Stack, utilizando React para el frontend y Node.js + Express para el backend.
+
+🚀 Tecnologías utilizadas
 Frontend
 React
 JavaScript (ES6)
@@ -13,7 +22,7 @@ React Router DOM
 Bootstrap 5
 SweetAlert2
 React Icons
-CSS
+CSS3
 Backend
 Node.js
 Express
@@ -21,18 +30,18 @@ MongoDB Atlas
 Mongoose
 CORS
 Dotenv
-Funcionalidades principales
-Visualización del catálogo de productos.
+✨ Funcionalidades
+Catálogo de productos.
 Filtrado por categorías.
-Visualización del detalle de cada producto.
+Vista detallada de cada producto.
 Carrito de compras.
-Aumento y disminución de cantidades.
-Eliminación de productos del carrito.
+Incremento y disminución de cantidades.
+Eliminación de productos.
 Actualización automática del stock.
-Persistencia de datos mediante MongoDB Atlas.
-Checkout para finalizar la compra.
-API REST para la gestión de productos.
-Estructura del proyecto
+Persistencia de datos en MongoDB Atlas.
+Checkout de compra.
+API REST para administrar productos.
+📂 Estructura del proyecto
 Hood-Diamond
 │
 ├── backend
@@ -52,64 +61,59 @@ Hood-Diamond
 │
 ├── package.json
 └── README.md
-Instalación
-1. Clonar el repositorio
-git clone https://github.com/TU-USUARIO/TU-REPOSITORIO.git
-2. Instalar las dependencias
+⚙️ Instalación
+Clonar el repositorio
+git clone https://github.com/CJRO77/proyectofinal-coder89705-backend1.git
+Instalar dependencias
 Frontend
 npm install
 Backend
 cd backend
-
 npm install
-Configuración de MongoDB Atlas
+🌐 Configuración de MongoDB Atlas
 
-Dentro de la carpeta backend se debe crear un archivo llamado:
+Dentro de la carpeta backend crear un archivo llamado:
 
 .env
 
-con la siguiente variable:
+Agregar la siguiente variable:
 
 MONGO_URI=tu_cadena_de_conexion
 
-Este archivo no se incluye en el repositorio porque contiene información privada de conexión a la base de datos.
+Importante: El archivo .env no se incluye en el repositorio porque contiene información privada.
 
-Ejecutar el proyecto
-Iniciar el Backend
-
-Ubicarse dentro de la carpeta backend y ejecutar:
-
+▶️ Ejecutar el proyecto
+Backend
+cd backend
 npm start
 
 o
 
 node server.js
 
-El servidor quedará disponible en:
+Servidor:
 
 http://localhost:3000
-Iniciar el Frontend
+Frontend
 
-Desde la carpeta principal ejecutar:
+Desde la carpeta principal:
 
 npm run dev
 
-La aplicación se abrirá en:
+Aplicación:
 
 http://localhost:5173
-Endpoints disponibles
-
-La API implementa las siguientes operaciones:
-
-GET /productos
-GET /productos/
-POST /productos
-PUT /productos/
-DELETE /productos/
+🔗 Endpoints disponibles
+Método	Endpoint	Descripción
+GET	/productos	Obtener todos los productos
+GET	/productos/	Obtener un producto por ID
+POST	/productos	Crear un producto
+PUT	/productos/	Actualizar un producto
+DELETE	/productos/	Eliminar un producto
 
 Estos endpoints permiten realizar el CRUD completo de productos almacenados en MongoDB Atlas.
 
-Dependencias principales
+📦 Dependencias principales
 Frontend
 React
 React Router DOM
@@ -120,13 +124,13 @@ Backend
 Express
 Mongoose
 Dotenv
-Cors
-Autor
+CORS
+👨‍💻 Autor
 
 Carlos Jonathan Rodriguez Osorio
 
-Proyecto desarrollado como entrega final del curso de React.
+Proyecto desarrollado como entrega final del curso de Backend1
 
-Observaciones
+📌 Observaciones
 
-Este proyecto fue desarrollado con fines educativos para poner en práctica los conceptos aprendidos durante el curso, incluyendo React, consumo de APIs, desarrollo de un backend con Express y almacenamiento de datos utilizando MongoDB Atlas.
+Este proyecto fue desarrollado con fines educativos para poner en práctica los conocimientos adquiridos durante el curso de Backend1, integrando un frontend moderno con React, un backend construido con Express y una base de datos MongoDB Atlas mediante Mongoose.
